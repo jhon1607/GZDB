@@ -2,12 +2,12 @@
 
 > GZDB.js Es una forma simlple y ligera de usar indexeddb
 
-Otros librerias que cumplen con este fin suelen tener miles de 
-lineas de codigo que cargan tu documento haciendolo mas pesado. 
+Otras librerias que cumplen con este fin suelen tener miles de 
+lineas de codigo, que cargan tu documento haciendolo mas pesado. 
 
 ### **GZDB**
- Esta pequeña libreria esta pensada para ser muy minimalista 
- pero igual de eficaz. Nos ayuda a manejar indexedDB de una forma muy sencilla y solo agregando menos de trecientas lineas de codigo indentadas a nuestro archivo. 
+ Esta pequeña libreria esta pensada para ser muy minimalista,
+ pero igual de eficaz. Nos ayuda a manejar indexedDB de una forma muy simple y solo agregando menos de trecientas lineas de codigo indentadas a nuestro archivo. 
 
  > Ligero, facil de usar, pero igual de eficaz
  
@@ -24,15 +24,15 @@ lineas de codigo que cargan tu documento haciendolo mas pesado.
 5. 
     **Delete()**
 6. 
-    **DeleteDB()*
+    **DeleteDB()**
 
  #### Veamos como usar GZDB
  #
 
  1. 
-    Creamos un nuevo objeto de tipo GZDB
+    Creamos un nuevo objeto de tipo GZdb
     
-    En este caso llamaremos a nuestra base de datos Clients 
+    En este caso llamaremos a nuestra base de datos Clients,
     por lo tanto así se llamará nuestro objeto.
 
     ***No es obligatorio tenga el mismo nombre, pero es recomendable para la legibilidad de nuestro codigo. #Buenas_practicas***
@@ -64,12 +64,12 @@ lineas de codigo que cargan tu documento haciendolo mas pesado.
 
     ```
 
-    Como vimos agregar el keypath y el autoIncrement no es obligatorio ni del todo necesario. 
+    Como vimos, agregar el keypath y el autoIncrement no es obligatorio ni del todo necesario. 
     #
 
     Para mas informacion sobre el keypath y el autoIncrement 
     puedes visitar la pagina de MDN que habla sobre el [CreateIndex de indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/createIndex)
-    El hecho de obviar esto no hace ninguna diferencia importante. Simplemente el valor "id" se comprotara como identificador unico de cada elemento y se autoIncrementara a su vez no permitiendo ningun "id" duplicado.
+    El hecho de obviar esto no hace ninguna diferencia importante, simplemente el valor "id" se comportara como identificador unico de cada elemento y se autoIncrementara, a su vez no permitiendo ningun "id" duplicado.
 
 
 2. Ahora creamos nuestro esquema. 
@@ -91,18 +91,19 @@ lineas de codigo que cargan tu documento haciendolo mas pesado.
         //Podemos usar objectParameters como 
         //{unique: true}
         //estos los pasamos siempre entre llaves {}
-        //Unique true no permitira que este elemento se 
-        //duplique en nuestra base de datos.
+        //Unique true no permitira que más de un index
+        //tenga este valor en nuestra 
+        //coleccion de nuestra base de datos.
     ``` 
     #
     User.setSchema() recibe dos parametros como pudimos ver. 
     Uno es el nombre de nuestra coleccion y el otro es los campos que llevará. 
-    Estos van dentro de laves {} colocando el nombre del indice como llave, por ejemplo **name** y dos parentecis al como valor **" "**. Esto se veeria asi. {name: ""}. 
+    Estos van dentro de laves {}, colocando el nombre del indice como llave, por ejemplo **name** y dos parentecis como valor **" "**. Esto se veeria asi. {name: ""}. 
     Como observamos puede tener varios indices, Tantos como queramos.
 
     #
     #
-        Muy simple verdad? 
+        Muy simple ¿verdad? 
         Si quieres conocer mas objectParameters de inexedDB puedes visitar la pagina de MDN
     [ObjectParameters indexedDb](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/createIndex)
     #
@@ -126,7 +127,7 @@ lineas de codigo que cargan tu documento haciendolo mas pesado.
 5. 
     ___Agregar registros___
 
-    ***Como todo en GZDB es facil agregar datos. Veamos como***
+    ***Como todo en GZDB es facil agregar datos, veamos como.***
 
     > el metodo set recibe dos parametros. El primero 
     > es el nombre de la coleccion y el segundo un JSON con los 
@@ -177,19 +178,19 @@ lineas de codigo que cargan tu documento haciendolo mas pesado.
     + Tenemos cuatro parametros para extraer un dato. 
         
         1. 
-            La coleccion. En este caso es la anteriormente declarada en el Schema llamada "Users"  
+            La coleccion. En este caso es la anteriormente declarada en el Schema, llamada "Users"  
 
         2. 
             El indice que usaremos para buscar. Declaramos: 
             name, apellido, telefono y user. Usaremos user
 
-        3. El valor que debe tener ese indice por ejemplo. queremos extraer la informacion de anna, entonces usaremos "anna01"
+        3. El valor que debe tener ese indice, por ejemplo. queremos extraer la informacion de anna, entonces usaremos "anna01"
 
         4. 
             La cantidad de registros que queremos traer. En este caso al buscar por el usuario solo tarera uno siempre. Pues solo existe un usuario con dicha credencial.
             Si buscaramos por nombre, GZDB nos traeria todos los usuarios con el mismo nombre. 
 
-    **Traigamos los datos de enna**
+    **Traigamos los datos de anna**
 
     ```JS
 
@@ -205,7 +206,7 @@ lineas de codigo que cargan tu documento haciendolo mas pesado.
             id: 1
             }]
 
-            No declaramos el id, pero lo vemos ahí
+            No declaramos el id, pero lo vemos ahí,
             Esto es porque GZDB agrega el nombre id 
             como keypath y indexedDB agrega un 
             identificador unico que va aumentando 
@@ -262,7 +263,7 @@ lineas de codigo que cargan tu documento haciendolo mas pesado.
         .then(datos => console.log(datos))
 
         /*
-            El resultado seria un array 
+            El resultado seria un array con
             todos los registros. Almacenando cada 
             registro en un JSON
         */
@@ -312,7 +313,7 @@ lineas de codigo que cargan tu documento haciendolo mas pesado.
     ___Imaginemos no cambiamos el apellido de anna ni la 
     eliminamos. Pero ahora queremos borrar a todos los guerrero___
 
-    Bien podriamos indicar 2 pero colocaremos 0 para que borre todos los que coincidan.
+    Bien, podriamos indicar 2 pero colocaremos 0 para que borre todos los que coincidan.
 
     ```JS
         Clients.Delete("Users", "apellido", "Guerrero", 0)
@@ -416,9 +417,8 @@ lineas de codigo que cargan tu documento haciendolo mas pesado.
     }
     setTaskJob()
 
-// En muchos casos es mejor async/await try/catch
-// Y en otros como este es mejor usar then. Vemos aquí  
-// que GZDB utiliza siempre promesas
+// GZDB utiliza siempre promesas, por lo que 
+// podemos usar async/await o then()
 
 
 //  Actualizando la hora de darle la comida al gato
@@ -436,12 +436,12 @@ lineas de codigo que cargan tu documento haciendolo mas pesado.
 // En caso de que alguien tenga la duda. es completamente 
 //posible pasar ese alert de esa forma. Igual un console.log, etc
 
-//  Ahora traeré la tarea del alimentar al gato usando su titulo
+//  Ahora traeré la tarea de alimentar al gato usando su titulo
 
     Tareas.get("Casa", "titulo", "Cat")
     .then(console.log)
 
-//  Traeré todas las tareas 
+//  Traeré todas las tareas de Casa
 
     Tareas.getAll("Casa")
     .then(console.log)
@@ -454,17 +454,24 @@ lineas de codigo que cargan tu documento haciendolo mas pesado.
 
 
 > GZDB tiene un total de 286 lineas identadas y un peso de 8.3kb y en su version minificada son solo 3.3kb
-> lo que no supone una perdida de rendimiento en donde vaya a usarse. Se recomienda usar la version minificada.
+> lo que no supone una perdida de rendimiento en donde vaya a usarse. (Se recomienda usar la version minificada.)
 
-**GZDB Es compatible con navegadores que soporten ES6 o superior (2015 0 superior)**
+**GZDB Es compatible con navegadores que soporten ES6 o superior (2015 (O) superior)**
 
 ***
 _Los navegadores que no admitan indexedDB tendran GZdb como undefined_
 
-> GZdb es funcional y estable, más se trabajara en futuras actualizaciones tratando de minificarlo y optimizarlo mas. 
+> GZdb es funcional y estable, más se trabajara en futuras actualizaciones tratando de minificarlo y optimizarlo aún más. 
 ***
 ***
+#
+#
+
+*Licencia: GNU.   Creador: Jhon Jairo Guerrero Sanchez*
+
+*Fecha de publicación: 16/10/2020 (DD/MM/AA)*
 
 ___Gracias por leer___
+
 
 
