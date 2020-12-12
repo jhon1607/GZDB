@@ -14,7 +14,7 @@ pero igual de eficaz. Nos ayuda a manejar indexedDB de una forma muy simple y so
 
 ## Indice
 
-## 1. [Creando nuevo objeto de tipo GZdb](#1-reamos-un-nuevo-objeto-de-tipo-gzdb)
+## 1. [Creando nuevo objeto de tipo GZdb](#1-creamos-un-nuevo-objeto-de-tipo-gzdb)
 
 ## 2. [Creando Esquema](#2-ahora-creamos-nuestro-esquema)
 
