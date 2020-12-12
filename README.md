@@ -18,7 +18,7 @@ pero igual de eficaz. Nos ayuda a manejar indexedDB de una forma muy simple y so
 
 ## 2. [Creando Esquema](#2-ahora-creamos-nuestro-esquema)
 
-## 3. [Agregando Registros](#-agregar-registros)
+## 3. [Agregando Registros](#3-agregar-registros)
 
 ## 4. [Pedir Datos](#4-pidiendo-datos)
 
