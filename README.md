@@ -14,19 +14,19 @@ pero igual de eficaz. Nos ayuda a manejar indexedDB de una forma muy simple y so
 
 ## Indice
 
-## 1. [Creando nuevo objeto de tipo GZdb](#1.-Creamos-un-nuevo-objeto-de-tipo-GZdb)
+## 1. [Creando nuevo objeto de tipo GZdb](#1-reamos-un-nuevo-objeto-de-tipo-gzdb)
 
-## 2. [Creando Esquema](#2.-Ahora-creamos-nuestro-esquema)
+## 2. [Creando Esquema](#2-ahora-creamos-nuestro-esquema)
 
-## 3. [Agregando Registros](#3.-Agregar-registros)
+## 3. [Agregando Registros](#-agregar-registros)
 
-## 4. [Pedir Datos](#4.-Pidiendo-datos)
+## 4. [Pedir Datos](#4-pidiendo-datos)
 
-## 5. [Actualizar Datos](#5.-Actualizando-datos)
+## 5. [Actualizar Datos](#5-actualizando-datos)
 
-## 6. [Eliminar Datos](#6.-Eliminando-datos)
+## 6. [Eliminar Datos](#6-eliminando-datos)
 
-## 7. [Eliminar Base de Datos](#7.-Por-ultimo-podemos-eliminar-la-base-de-datos-con-DeleteDB)
+## 7. [Eliminar Base de Datos](#7-por-ultimo-podemos-eliminar-la-base-de-datos-con-deletedb)
 
 **Metodos**
 
